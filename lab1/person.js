@@ -6,8 +6,4 @@ class Person {
         this.favoriteColor = favoriteColor;
     speak() {
        console.log(chalk.hex(this.favoriteColor)(this.name));
-    }
-        
-    }
-    
-export default Person;
+
