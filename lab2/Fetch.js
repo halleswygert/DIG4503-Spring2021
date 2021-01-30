@@ -1,25 +1,23 @@
 import axios from 'axios';
+import chalk from 'chalk'; 
 
-class Fetch{
+class Fetch {
     constructor(pokemon, color){
         this.pokemon = pokemon;
         this.color = color; 
     }
-}
-
-// Fetch this URL
-fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-    // And then...
-    .then(function (response) {
-        // Use the 'data'
+fetch () {
+    axios('https://pokeapi.co/api/v2/pokemon/'+ this.pokemon)
+    .then((response => {
         const pokemon = response.data;
+         
+        console.log(chalk.hex(this.color)("This is a" + pokemon.name + "the ID is " + pokemon.id));
 
-        // In this example, the above URL will return an object
-        //  with data on the Pokemon requested
-        console.log("This is a " + pokemon.name + " and its ID is " + pokemon.id);
-    })
-    .catch(function (error) {
-        // handle error
-        console.log("Error: " + error);
-    });
+    }))
+    .catch(error => console.log(chalk.red("This is an error: " + error))
 
+)}
+
+}
+  
+export default Fetch;
