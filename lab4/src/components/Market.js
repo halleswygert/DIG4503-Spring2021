@@ -7,6 +7,7 @@ class Market extends React.Component {
         super(props);
         this.state = {items:[]};
     };
+
     render(){
         return(
             <div>
