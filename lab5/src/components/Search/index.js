@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Pokemon from '../Pokemon/index.js';
 
 function Search(){
+
   const [search, setSearch] = useState("");
 
   const [pokemon, setPokemon] = useState({name:"N/A", id:"N/A", sprites:{front_default:null}});
@@ -17,16 +18,23 @@ function Search(){
       setPokemon(response.data);
       console.log(response.data);
     })
+
     .catch(function (error){
       console.log("Error: " + error);
       setPokemon({name:"Not found", id:"N/A", sprites:{front_default:null}});
     });
   }
-    return (<div>
+
+    return (
+    <div>
+
     <input type="text" onChange={(event) => {
         setSearch(event.target.value);
       }} />
-      <button onClick={() => searchMonsters()}>Search</button>
+      
+      <button onClick={() => searchMonsters()
+    }>Search</button>
+
       {
         <p>Searched: {search}</p>
       }

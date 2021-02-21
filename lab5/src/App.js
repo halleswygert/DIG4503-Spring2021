@@ -3,10 +3,11 @@ import Search from './components/Search/index.js';
 function App() {
 
   return (
-    <div className="App">
+    <div>
     <Search/>
     </div>
   );
-    }
+
+}
 
 export default App;
