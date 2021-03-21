@@ -5,7 +5,7 @@ import React from "react";
 function PutName(){
     const [newName, setNewName] = useState ("");
 
-    const addName = () => {
+    function addName (){
         Axios.put("http://localhost:45030/people/" + newName)
         .then(response => {
             console.log(response.data);
@@ -21,6 +21,7 @@ return (
     <h1> Press the button to add a name! </h1>
     <input type="text" onChange={(event) => setNewName(event.target.value)}/>
     <button onClick={()=> addName()}>Click Here!</button>
+    <p>{newName}</p>
     </div>
 )
 

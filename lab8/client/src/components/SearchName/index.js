@@ -5,7 +5,7 @@ import React from "react";
 function GetName(){
     const [newName, setNewName] = useState ("");
 
-    const searchName = () => {
+    function searchName  (){
         Axios.get("http://localhost:45030/people/" + newName)
         .then(response => {
             console.log(response.data);
@@ -21,6 +21,7 @@ return (
     <h1> Press the button to search a name! </h1>
     <input type="text" onChange={(event) => setNewName(event.target.value)}/>
     <button onClick={()=> searchName()}>Click Here!</button>
+    <p>{newName}</p>
     </div>
 )
 
