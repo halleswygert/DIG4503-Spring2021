@@ -1,4 +1,4 @@
-import MongoClient, { connect } from 'mongodb';
+import MongoClient from 'mongodb';
 
 const URL = "mongodb+srv://HalleSwygert:DOQ2GzWFYP0oq2DN@cluster0.yuzwq.mongodb.net";
 
@@ -19,7 +19,7 @@ async createOne(first,last,color){
     let object = {
         "firstName": "",
         "lastName": "",
-        "favoriteColor": "", 
+        "favoriteColor": "n", 
     };
     if(this.collection != null)
      return await this.collection.insertOne(object); 
