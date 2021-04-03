@@ -19,7 +19,7 @@ async createOne(first,last,color){
     let object = {
         "firstName": "",
         "lastName": "",
-        "favoriteColor": "n", 
+        "favoriteColor": "", 
     };
     if(this.collection != null)
      return await this.collection.insertOne(object); 
