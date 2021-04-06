@@ -8,7 +8,12 @@ class Database{
         this.database= null;
         this.collection = null; 
     } 
+async connect(){
+    this.connection = await MongoClient.connect(url,{useUnifiedTopology:true}); 
+    this.database = this.connection.db("lab11");
+    this.collection = this.database.collection("books");
+}}
 
-}
+
 
 export default Database 
