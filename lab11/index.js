@@ -8,10 +8,14 @@ App.use(Express.json());
 App.use(CORS()); 
 
 App.put("/books/:ISBN", (req,res) => {
+    let title = req.params.title;
+    let author = req.params.author;
+    let description = req.params.description; 
     
 }); 
 
 App.get("/books/:ISBN", (req,res) =>{
+    
 
 });
 

@@ -14,11 +14,29 @@ async connect(){
     this.collection = this.database.collection("books");
 }
 
+createOne(){
+    
+}
+
+readOne(){
+
+}
+
+readMany(){
+
+}
+
+updateOne(){
+
+}
+
+deleteOne(){
+    
+}
 
 close(){
     if(this.collection !=null ){
         this.collection.close();
     }
-}
-}
+}}
 export default Database 
