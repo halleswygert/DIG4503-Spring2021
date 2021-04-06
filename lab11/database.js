@@ -15,11 +15,12 @@ async connect(){
 }
 
 createOne(){
-    
+
     
 }
 
 readOne(){
+    let result = {book: "not found!"}
 
 }
 

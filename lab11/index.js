@@ -8,28 +8,25 @@ App.use(Express.json());
 App.use(CORS()); 
 
 App.put("/books/:ISBN", (req,res) => {
-    let title = req.params.title;
-    let author = req.params.author;
-    let description = req.params.description; 
-    
+   Database.createOne();  
 }); 
 
 App.get("/books/:ISBN", (req,res) =>{
-    let result = {book: "not found!"}
+    Database.readOne();
     
-
 });
 
-
 App.post("/books/search", (req,res) =>{
+    Database.readMany(); 
 
 }); 
 
 App.patch("/books/:ISBN", (req,res) => {
-
+    Database.updateOne();
 }); 
 
 App.delete("/books/:ISBN", (req,res) => {
+    Database.deleteOne(); 
 
 }); 
 
