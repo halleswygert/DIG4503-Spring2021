@@ -16,6 +16,7 @@ async connect(){
 
 createOne(){
     
+    
 }
 
 readOne(){
@@ -31,7 +32,7 @@ updateOne(){
 }
 
 deleteOne(){
-    
+
 }
 
 close(){
