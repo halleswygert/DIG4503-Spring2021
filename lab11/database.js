@@ -14,25 +14,28 @@ async connect(){
     this.collection = this.database.collection("books");
 }
 
-createOne(){
-
-    
+async createOne(){
+let data = {
+    "title":"",
+    "author":"",
+    "description":"", 
 }
-
-readOne(){
-    let result = {book: "not found!"}
-
-}
-
-readMany(){
 
 }
 
-updateOne(){
+async readOne(){
+    let search = 
+}
+
+async readMany(){
 
 }
 
-deleteOne(){
+async updateOne(){
+
+}
+
+async deleteOne(){
 
 }
 
