@@ -24,11 +24,13 @@ let data = {
 }
 
 async readOne(){
-    let search = 
+    let findDoc = 
 }
 
 async readMany(){
+    let books = {
 
+    }
 }
 
 async updateOne(){

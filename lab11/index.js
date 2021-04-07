@@ -4,33 +4,36 @@ import Database from './Database.js'
 
 const App= Express();
 const port= 45030; 
+const database = new Database();
+
 App.use(Express.json()); 
 App.use(CORS()); 
 
+
 App.put("/books/:ISBN", (req,res) => {
   let newDoc = 
-  Database.createOne(request.params.title, 
+  database.createOne(request.params.title, 
   request.params.author,request.params.description); 
-   
+
   response.json(newDoc); 
 }); 
 
 App.get("/books/:ISBN", (req,res) =>{
-    Database.readOne();
+    database.readOne();
     
 });
 
-App.post("/books/search", (req,res) =>{
-    Database.readMany(); 
+App.post("/books/search/:books", (req,res) =>{
+    database.readMany(); 
 
 }); 
 
 App.patch("/books/:ISBN", (req,res) => {
-    Database.updateOne();
+    database.updateOne();
 }); 
 
 App.delete("/books/:ISBN", (req,res) => {
-    Database.deleteOne(); 
+    database.deleteOne(); 
 
 }); 
 
