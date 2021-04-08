@@ -1,3 +1,4 @@
+import { query, response } from 'express';
 import MongoClient from 'mongodb';
 
 const url = "mongodb+srv://HalleSwygert:DOQ2GzWFYP0oq2DN@cluster0.yuzwq.mongodb.net";
@@ -16,17 +17,24 @@ async connect(){
 
 async createOne(){
 let data = {
+    "ISBN":"",
     "title":"",
     "author":"",
-    "description":"", 
+    "description":"",   
 }
-
+response.json(data); 
 }
-
 async readOne(){
-    let findDoc = 
-}
+    return this.collection.findOne(query)
+    .then(findDoc=> {
+        if(findDoc){
+            console.log({ISBN});       
+        }else{
+          console.log({book: "not found"}); 
+    }   
 
+    }
+}
 async readMany(){
     let books = {
 
@@ -34,10 +42,12 @@ async readMany(){
 }
 
 async updateOne(){
+    
 
 }
 
 async deleteOne(){
+    let 
 
 }
 
