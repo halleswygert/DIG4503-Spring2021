@@ -25,7 +25,7 @@ let data = {
 response.json(data); 
 }
 async readOne(){
-    return this.collection.findOne(query)
+    return await this.collection.findOne(query)
     .then(findDoc=> {
         if(findDoc){
             console.log({ISBN});       
@@ -33,7 +33,7 @@ async readOne(){
           console.log({book: "not found"}); 
     }   
 
-    }
+    });
 }
 async readMany(){
     let books = {
@@ -47,7 +47,8 @@ async updateOne(){
 }
 
 async deleteOne(){
-    let 
+     return await this.collection.count({books:"deleted"})
+    then(books => console.log(`{books:}`))
 
 }
 

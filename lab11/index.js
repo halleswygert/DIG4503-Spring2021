@@ -14,7 +14,7 @@ App.put("/books/:ISBN", (req,res) => {
   Database.createOne(request.params.ISBN, request.params.title, 
   request.params.author,request.params.description); 
 
-  response.json(newDoc); 
+  console.log(req.body); 
 }); 
 
 App.get("/books/:ISBN", (req,res) =>{
@@ -33,7 +33,7 @@ App.patch("/books/:ISBN", (req,res) => {
 
 App.delete("/books/:ISBN", (req,res) => {
    Database.deleteOne(); 
-
+console.log(req.query); 
 }); 
 
 App.listen(45030, function(){
