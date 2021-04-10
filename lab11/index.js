@@ -25,7 +25,7 @@ App.get("/books/:ISBN", (req,res) =>{
     
 });
 
-App.post("/books/search/:books", (req,res) =>{
+App.post("/books/search/", (req,res) =>{
     d.readMany(); 
 
 }); 
@@ -35,8 +35,9 @@ App.patch("/books/:ISBN", (req,res) => {
 }); 
 
 App.delete("/books/:ISBN", (req,res) => {
-   d.deleteOne(); 
-console.log(req.query); 
+const request = req.params.request; 
+let response = {"books": 0};
+const result = await d.deleteOne()
 }); 
 
 App.listen(45030, function(){
