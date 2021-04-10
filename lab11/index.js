@@ -8,31 +8,34 @@ const port= 45030;
 App.use(Express.json()); 
 App.use(CORS()); 
 
+const d = new Database(); 
+d.connect(); 
+
 
 App.put("/books/:ISBN", (req,res) => {
   let newDoc = 
-  Database.createOne(request.params.ISBN, request.params.title, 
+  d.createOne(request.params.ISBN, request.params.title, 
   request.params.author,request.params.description); 
 
   console.log(req.body); 
 }); 
 
 App.get("/books/:ISBN", (req,res) =>{
-    Database.readOne();
+    d.readOne();
     
 });
 
 App.post("/books/search/:books", (req,res) =>{
-    Database.readMany(); 
+    d.readMany(); 
 
 }); 
 
 App.patch("/books/:ISBN", (req,res) => {
-    Database.updateOne();
+    d.updateOne();
 }); 
 
 App.delete("/books/:ISBN", (req,res) => {
-   Database.deleteOne(); 
+   d.deleteOne(); 
 console.log(req.query); 
 }); 
 
