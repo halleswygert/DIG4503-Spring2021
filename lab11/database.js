@@ -16,40 +16,39 @@ async connect(){
 }
 
 async createOne(){
+if(this.collection != null){
 let data = {
-    "ISBN":"",
-    "title":"",
-    "author":"",
-    "description":"",   
+    "ISBN": ISBN,
+    "title": title,
+    "author": author,
+    "description": description,   
 }
-response.json(data); 
+await this.collection.insertOne(data); 
+return data; 
+}
 }
 async readOne(){
-    return await this.collection.findOne(query)
-    .then(findDoc=> {
-        if(findDoc){
-            console.log({ISBN});       
-        }else{
-          console.log({book: "not found"}); 
-    }   
-
-    });
-}
+    if(this.collection !=null){
+    return await this.collection.findOne({"ISBN": ISBN})
+}}
 async readMany(){
-    let books = {
+    if(this.collection !=null){
 
     }
 }
 
 async updateOne(){
-    
+    if(this.collection !=null){
 
-}
-
-async deleteOne(){
-     return await this.collection.count({books:"deleted"})
-    then(books => console.log(`{books:}`))
-
+}}
+// books or ISBN? 
+async deleteOne(ISBN){
+    if(this.collection != null) {
+    const result = await this.collection.deleteOne({"ISBN":ISBN}); 
+    return {"books" : result.deletedCount}
+    }else{
+        return {"books": "deleted books not found."}; 
+    }
 }
 
 close(){
