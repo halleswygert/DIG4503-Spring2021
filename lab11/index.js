@@ -1,4 +1,4 @@
-import Express from 'express';
+import Express, { response } from 'express';
 import CORS from 'cors';
 import Database from './Database.js'
 
@@ -12,32 +12,28 @@ const d = new Database();
 d.connect(); 
 
 
-App.put("/books/:ISBN", (req,res) => {
-  let newDoc = 
-  d.createOne(request.params.ISBN, request.params.title, 
-  request.params.author,request.params.description); 
-
-  console.log(req.body); 
+App.put("/books/:ISBN", async (req,res) => {
+   
 }); 
 
-App.get("/books/:ISBN", (req,res) =>{
+App.get("/books/:ISBN", async (req,res) =>{
     d.readOne();
     
 });
 
-App.post("/books/search/", (req,res) =>{
+App.post("/books/search/", async (req,res) =>{
     d.readMany(); 
 
 }); 
 
-App.patch("/books/:ISBN", (req,res) => {
+App.patch("/books/:ISBN", async (req,res) => {
     d.updateOne();
 }); 
 
-App.delete("/books/:ISBN", (req,res) => {
-const request = req.params.request; 
-let response = {"books": 0};
-const result = await d.deleteOne()
+App.delete("/books/:ISBN", async (req,res) => {
+const ISBN = req.params.ISBN; 
+const result = await d.deleteOne(ISBN)
+response.json(result); 
 }); 
 
 App.listen(45030, function(){
