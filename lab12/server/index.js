@@ -13,21 +13,38 @@ d.connect();
 
 
 App.put("/books/:ISBN", async (req,res) => {
-   
+   const ISBN = request.params.ISBN;
+
+   const title = request.body.title;
+
+   const author = request.body.author;
+
+   const description = request.body.description; 
+    
+   const result = await d.createOne(ISBN,title,author,description); 
+
+   response.json(result); 
+
 }); 
 
 App.get("/books/:ISBN", async (req,res) =>{
-    d.readOne();
+    const ISBN = request.body.params; 
+    let results = await d.readOne(ISBN);
     
+    response.json(result); 
 });
 
 App.post("/books/search/", async (req,res) =>{
-    d.readMany(); 
+    const documents = await d.readMany({books:[]}); 
+
+    response.json(result); 
 
 }); 
 
 App.patch("/books/:ISBN", async (req,res) => {
     d.updateOne();
+
+    response.json(result);
 }); 
 
 App.delete("/books/:ISBN", async (req,res) => {

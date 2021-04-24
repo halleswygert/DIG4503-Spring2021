@@ -15,33 +15,28 @@ async connect(){
     this.collection = this.database.collection("books");
 }
 
-async createOne(){
+async createOne(document){
 if(this.collection != null){
-let data = {
-    "ISBN": ISBN,
-    "title": title,
-    "author": author,
-    "description": description,   
-}
-await this.collection.insertOne(data); 
-return data; 
-}
-}
-async readOne(){
+    const result = await this.collection.insertOne({"ISBN": ISBN, "author": author, "title":
+    title, "description": description});
+
+
+async readOne(query){
     if(this.collection !=null){
-    return await this.collection.findOne({"ISBN": ISBN})
+    const result = await this.collection.findOne({"ISBN": ISBN})
 }}
-async readMany(){
+async readMany(query){
     if(this.collection !=null){
+        const result = await this.collection.findMany
 
     }
 }
 
 async updateOne(){
     if(this.collection !=null){
+        const result = await this.collection.updateOne({})
 
 }}
-// books or ISBN? 
 async deleteOne(ISBN){
     if(this.collection != null) {
     const result = await this.collection.deleteOne({"ISBN":ISBN}); 
