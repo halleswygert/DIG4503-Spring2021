@@ -20,7 +20,7 @@ function GetFunction(){
 return(
 <div>
     <h1>Retrieve a book</h1>
-    <p>ISBN:</p>
+    <p> Enter ISBN:</p>
     <input type="text" title="ISBN" onChange={(event) => setISBN(event.target.value)}/>
     <p> </p>
   <button onClick={()=> getBook()}>Submit</button>
