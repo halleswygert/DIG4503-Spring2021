@@ -14,14 +14,13 @@ function PutFunction(){
     const [description, setDescription] = useState(""); 
 
         function addBooks() {
-        Axios.put("http://localhost:45030/books/" + ISBN)
+        Axios.put("http://localhost:45030/books/" + ISBN, {title: title, author: author, desciprtion: description})
         .then(response => {
             console.log("Book successfully added" + response.data);
         })
         .catch(error => {
             console.log("Error Found" + error);
         });
-
 }; 
         // accept user input for ISBN, TITLE, AUTHOR, DESCRIPTION  
         return(

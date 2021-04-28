@@ -58,9 +58,9 @@ async updateOne(){
 async deleteOne(ISBN){
     if(this.collection != null) {
     const result = await this.collection.deleteOne({"ISBN":ISBN}); 
-    return {"books" : result.deletedCount}
+    return { book : result.deletedCount}
     }else{
-        return {"books": "deleted books not found."}; 
+        return { book : "deleted books not found."}; 
     }
 }
 

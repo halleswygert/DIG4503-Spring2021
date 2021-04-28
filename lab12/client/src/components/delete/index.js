@@ -3,13 +3,13 @@ import React from 'react';
 import {useState} from 'react'; 
 
 // [value, setValue]
-
+// 
 function DeleteFunction(){
 
     const [ISBN,setISBN] = useState(); 
 
     function deleteBook(){
-        Axios.delete("http://localhost:45030/books/" , ISBN)
+        Axios.delete("http://localhost:45030/books/"  + ISBN)
         .then(response => {
             console.log("Book successfully deleted!" + response.data);
         })
