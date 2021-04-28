@@ -19,9 +19,10 @@ function DeleteFunction(){
 
 }; 
 
+// accepts ISBN as input to delete book 
     return(
         <div>
-            <h1> Click here to delete a book! </h1>
+            <h1> Click here to delete a book </h1>
             <p>Enter ISBN:</p>
             <input type="text" title="ISBN" onChange={(event) => setISBN(event.target.value)}/> 
             <p> </p>

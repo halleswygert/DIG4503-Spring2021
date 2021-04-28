@@ -17,22 +17,32 @@ async connect(){
 //PUT
 async createOne(document){
 if(this.collection != null){
-    
     const result = await this.collection.insertOne({"ISBN": ISBN, "author": author, "title":
     title, "description": description});
-}}
+    return {result} // result 
+}else{
+    return null;
 
+}}
 //GET
-async readOne(query){
+async readOne(ISBN){
     if(this.collection !=null){
     const result = await this.collection.findOne({"ISBN": ISBN})
+    return {result}; // return result or ISBN
+    }else{
+        return {book: "not found"} 
+    }
 }};
 
 //POST
-async readMany(query){
-
+async readMany(){
     if(this.collection !=null){
-        const result = await this.collection.findMany
+        const result = await this.collection.findMany([
+            {
+            
+
+            }
+        ])
 
     }
 };

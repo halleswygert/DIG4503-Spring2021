@@ -26,7 +26,7 @@ function PutFunction(){
         // accept user input for ISBN, TITLE, AUTHOR, DESCRIPTION  
         return(
             <div>
-            <h1> Add a new book to your collection! </h1>
+            <h1> Add a new book to your collection </h1>
             <p>ISBN:</p>
             <input type="text" title="ISBN" onChange={(event) => setISBN(event.target.value)}/>
             <p>Title:</p>
