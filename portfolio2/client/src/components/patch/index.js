@@ -19,9 +19,9 @@ export default function Patch(){
 return(
 <div>
     <h1> Update a movie </h1>
-   <p>title: </p>
+   <p>Title: </p>
     <input type="text" id ="title" value = {title} onChange={(event) => setTitle(event.target.value)}/>
-    <p>description: </p>
+    <p>Description: </p>
     <input type="text" id ="description" value = {description} onChange={(event) => setDescription(event.target.value)}/>
     <button onClick={updateMovie}>Update Movie</button>
     
